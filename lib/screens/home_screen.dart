@@ -26,7 +26,8 @@ class HomeScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  context.push(('/pathParamScreen/aaa'));
+                  //context.push(('/pathParamScreen/aaa'));
+                  context.pushNamed('path',pathParameters: {'id' : 'aaa'});
                 },
                 child: const Text('go path param page'),
               ),
@@ -35,7 +36,8 @@ class HomeScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  context.push(('/queryParamScreen?id=sch'));
+                  //context.push(('/queryParamScreen?id=sch'));
+                  context.pushNamed('query',queryParameters: {'id' : 'aaa'});
                 },
                 child: const Text('go query param page'),
               ),
@@ -45,6 +47,16 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   context.push('/extraParamScreen', extra: null);
+                },
+                child: const Text('go extra param page(null)'),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  //context.push('/extraParamScreen', extra: '3333');
+                  context.pushNamed('hihihi' , extra: '333');
                 },
                 child: const Text('go extra param page'),
               ),
